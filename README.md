@@ -3,7 +3,8 @@
 Simple WhatsApp Bot
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/LitRHap/wabot)
-
+# Join kalo eror/ga paham
+* [`Join sini`](https://chat.whatsapp.com/I4S4QfCet92GueJV5Uq3jT) 
 ## FOR TERMUX/UBUNTU/SSH USER
 
 ```bash
@@ -13,15 +14,18 @@ apt install nodejs -y
 apt install ffmpeg -y
 apt install imagemagick -y
 git clone https://github.com/LitRHap/wabot
-cd wabot-aq
+cd wabot
+bash install.sh
 npm install
-npm i hmtai
-npm i booru
-npm i image-to-pdf
-npm i nhentai-node-api
 npm update
 ```
-
+# If You Can't
+```bash
+apt update && apt upgrade
+apt install git -y
+git clone https://github.com/LitRHap/wabot
+bash install.sh
+```
 ---------
 
 ## FOR WINDOWS/VPS/RDP USER
@@ -143,10 +147,3 @@ conn.logger.level = 'debug'
 
 ---------
 
-<a href="https://github.com/LitRHap"><img src="https://i.ibb.co/7j0vtwz/xlogo.png" width="100" height="100"></a> | [![Nurutomo](https://github.com/Rlxfly.png?size=100)](https://github.com/Rlxfly) | [![Arif](https://github.com/ariffb25.png?size=100)](https://github.com/ariffb25) | [![Ftwrr](https://github.com/Ftwrr.png?size=100)](https://github.com/Ftwrr) 
-----|----|----|----
-[ALIEF](https://github.com/LitRHap) | [Rell](https://github.com/Rlxfly) | [Arif](https://github.com/ariffb25) | [Ftwrr](https://github.com/Ftwrr)
-Creator | Editing some gake reply | Most Active Contributor | 2nd Most Active Contributor
-
-
-NOTE: This project will not maintained after `15 September 2021`, that means no update. Feel free to anyone to continue this project :)

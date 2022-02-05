@@ -11,7 +11,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 	else if (random_length == 3) random = 1000
 	else if (random_length == 4) random = 10000
 	
-	let nomerny = `List Nomer\n\nPunya Bio\n`
+	let nomerny = `*List Nomer*\n\nPunya Bio\n`
 	let no_bio = `\nTanpa Bio\n`
 	let no_watsap = `\nTidak Terdaftar\n`
 	
@@ -46,4 +46,4 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['tools']
 handler.command = /^(nowa|dork)$/i
 
-module.exports = handler
+module.exports = handler 

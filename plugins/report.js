@@ -1,5 +1,3 @@
-// By RC047 :V
-
 let handler = async(m, { conn, text }) => {
     if (!text) throw 'Silahkan masukkan laporan'
     if (text.length > 300) throw 'Maaf Teks Terlalu Panjang, Maksimal 300 Teks!'

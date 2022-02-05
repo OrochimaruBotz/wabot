@@ -1,7 +1,10 @@
 let fs = require('fs')
-let tum = fs.readFileSync('./src/Ah5.jpeg')
-let tum2 = fs.readFileSync('./src/emror.jpeg')
-global.owner = ['6289681378568', '6283820073017', '6283801499848','48699530299','62813828362494','85290882526','6285240750713','6282125986924','6288286421519'] // Put your number here
+let fetch = require('node-fetch')
+global.tum = fs.readFileSync('./src/Ah5.jpeg')
+global.tum2 = fs.readFileSync('./src/emror.jpeg')
+global.thumb = fs.readFileSync('./src/thumb.jpeg')
+global.thumb2 = fs.readFileSync('./src/emror.jpeg')
+global.owner = ['6289681378568', '6283820073017', '6283801499848','85290882526','6285240750713','6288286421519','212706611366'] // Put your number here
 global.mods = ['6285693120588'] // Want some help?
 global.prems = ['6287842147162','6285893120588','6285656615441'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
@@ -12,24 +15,25 @@ global.APIs = { // API Prefix
   zeks: 'https://api.zeks.xyz',
   pencarikode: 'https://pencarikode.xyz',
   LeysCoder: 'https://leyscoders-api.herokuapp.com', 
-  Dehan: 'https://dhnjing.xyz'
+  Dehan: 'https://dhnjing.xyz',
+  Velgrynd: 'https://velgrynd.herokuapp.com',
+  neoxr: 'https://neoxr-api.herokuapp.com'
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api.xteam.xyz': '879aaf8cc437fcb4',
+  'https://api.xteam.xyz': 'YOUR_APIKEY',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
-  'https://api.zeks.xyz': 'apivinz',
+  'https://api.zeks.xyz': 'Nyarlathotep',
   'https://pencarikode.xyz': 'pais',
   'https://leyscoders-api.herokuapp.com': 'dappakntlll',
-  'https://dhnjing.xyz': 'LitRHap'
+  'https://dhnjing.xyz': 'e2645065aaced89861b4',
+  'https://neoxr-api.herokuapp.com': 'yntkts',
+  'https://velgrynd.herokuapp.com': 'YOUR_APIKEY' // Please register if you want to get apikey 
 }
 
 // Sticker WM
 global.packname = 'I hope you\'re fine'
 global.author = 'LitRHap'
-//Thumbnail
-global.thumb = tum
-global.thumb2 = tum2
 global.multiplier = 69 // The higher, The harder levelup
 
 let chalk = require('chalk')

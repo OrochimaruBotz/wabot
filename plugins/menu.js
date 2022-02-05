@@ -1,34 +1,34 @@
 let fs = require('fs')
-let tum = fs.readFileSync('../src/emror.jpeg')
-let tum2 = fs.readFileSync('../src/Ah5.jpeg')
 let path = require('path')
+let fetch = require('node-fetch')
 let levelling = require('../lib/levelling')
+const thumb = fs.readFileSync('./src/thumb.jpeg')
 let tags = {
-  'main': 'Main',
-  'game': 'Game',
-  'xp': 'Exp & Limit',
-  'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
-  'quotes': 'Quotes',
-  'admin': 'Admin',
-  'group': 'Group',
-  'premium': 'Premium',
-  'internet': 'Internet',
-  'anonymous': 'Anonymous Chat',
-  'nulis': 'MagerNulis & Logo',
-  'downloader': 'Downloader',
-  'tools': 'Tools',
-  'fun': 'Fun',
-  'database': 'Database',
-  'vote': 'Voting',
-  'absen': 'Absen',
-  'quran': 'Al Qur\'an',
-  'jadibot': 'Jadi Bot',
-  'owner': 'Owner',
-  'host': 'Host',
-  'advanced': 'Advanced',
-  'info': 'Info',
-  '': 'No Category',
+  'main': '🄼🄰🄸🄽',
+  'game': '🄶🄰🄼🄴',
+  'xp': '🄴🅇🄿 & 🄻🄸🄼🄸🅃',
+  'sticker': '🅂🅃🄸🄲🄺🄴🅁',
+  'kerang': '🄺🄴🅁🄰🄽🄶 🄰🄹🄰🄸🄱',
+  'quotes': '🅀🅄🄾🅃🄴🅂',
+  'admin': '🄰🄳🄼🄸🄽',
+  'group': '🄶🅁🄾🅄🄿',
+  'premium': '🄿🅁🄴🄼🄸🅄🄼',
+  'internet': '🄸🄽🅃🄴🅁🄽🄴🅃',
+  'anonymous': '🄰🄽🄾🄽🅈🄼🄾🅄🅂 🄲🄷🄰🅃',
+  'nulis': '🄼🄰🄶🄴🅁 🄽🅄🄻🄸🅂 & 🄻🄾🄶🄾',
+  'downloader': '🄳🄾🅆🄽🄻🄾🄰🄳🄴🅁',
+  'tools': '🅃🄾🄾🄻🅂',
+  'fun': '🄵🅄🄽',
+  'database': '🄳🄰🅃🄰🄱🄰🅂🄴',
+  'vote': '🅅🄾🅃🄸🄽🄶',
+  'absen': '🄰🄱🅂🄴🄽',
+  'quran': '🄰🄻 🅀🅄🅁 🄰🄽',
+  'jadibot': '🄹🄰🄳🄸 🄱🄾🅃',
+  'owner': '🄾🅆🄽🄴🅁',
+  'host': '🄷🄾🅂🅃',
+  'advanced': '🄰🄳🅅🄰🄽🄲🄴',
+  'info': '🄸🄽🄵🄾',
+  '': '🄽🄾 🄲🄰🅃🄴🄶🄾🅁🅈',
 }
 const defaultMenu = {
   before: `
@@ -46,15 +46,17 @@ const defaultMenu = {
 │
 │ Uptime: *%uptime (%muptime)*
 │ Database: %rtotalreg of %totalreg
-│ Github :
+│ Script :
 │ https://github.com/LitRHap/wabot
 │ Instagram :
 │ https://instagram.com/alif._.t
+│ Server :
+│ https://uptimerobot.com
 ╰────
 %readmore`.trimStart(),
-  header: '╭─「 %category 」',
-  body: '│ • %cmd %islimit %isPremium',
-  footer: '╰━━━━━\n',
+  header: '┏┉┄┈┈┈『%category』┈┈┈┈┈┉┓',
+  body: '┆➜ %cmd %islimit %isPremium',
+  footer: '└┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
@@ -85,9 +87,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       year: 'numeric'
     }).format(d)
     let time = d.toLocaleTimeString(locale, {
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric'
+      hour12: false
     })
     let _uptime = process.uptime() * 1000
     let _muptime
@@ -156,8 +156,25 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    //Merasa keren
-conn.sendMessage(m.chat, text.trim() , 'conversation', { quoted: m, thumbnail: tum, contextInfo: { externalAdReply: { title: 'Just simple WhatsApp Bot', body: `© ${conn.user.name}`, sourceUrl: package.homepage, thumbnail: tum2 }}})
+    //Iya bang sy nub
+    const reply = {
+    key: {
+        participant: '0@s.whatsapp.net'
+    },
+    message: {
+        orderMessage: {
+            itemCount: 1122334455,
+            itemCoun: 404,
+            surface: 404,
+            message: `© ${conn.user.name}`,
+            orderTitle: 'B',
+            thumbnail: thumb,
+            sellerJid: '0@s.whatsapp.net'
+        }
+    }
+}
+let fkon = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `Relldev`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN: Rlxfly UwU\nitem1.TEL;waid=6283820073017:6283820073017\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
+conn.send3ButtonImg(m.chat, thumb, `Hi! Im ${conn.user.name}\n\nHere my menu...`, text.trim(), 'ping', '.ping', 'owner', '-owner', 'donasi', '.donasi', reply)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -177,6 +194,7 @@ handler.botAdmin = false
 
 handler.fail = null
 handler.exp = 3
+
 
 module.exports = handler
 
